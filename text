@@ -1,0 +1,6 @@
+مكتبة الشاشات tkinter
+مكتبة استخدام الصور PIL "pip install Pillow"
+مكتبة التعامل مع الوقت datetime
+مكتبة التعامل مع الملفات os
+مكتبة التعامل مع التواريخ tkcalendar" pip install tkcalendar"
+لتخفيف الضغط على المعالح threading
