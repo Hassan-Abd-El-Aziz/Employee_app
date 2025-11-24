@@ -29,12 +29,18 @@ class WidgetsApp:
         self.add_entry_delete()
         self.get_delete()
 # ====================================================== #
+# ====================================================== #
         self.add_frame_info()
-# ====================================================== #
 
-        self.add_email()
 # ====================================================== #
+        self.add_email()
+
         self.add_section()
+        self.add_id()
+        self.add_city()
+        self.add_name()
+        self.add_date()
+# ====================================================== #
 
 # الدالة الخاصة بالعنوان
     def add_frame_title(self):
@@ -145,3 +151,62 @@ class WidgetsApp:
         self.entry_section=Entry(self.master,width=20,font=('Bold Oblique',18),
                                  relief=RAISED,border=1,background="#EDFFF0")
         self.entry_section.place(x=120,y=292)
+    
+
+    def add_id(self):
+        '''add employee id'''
+        self.label_id=Label(self.master,font=('Bold Oblique',18),
+                            background="#AEDEFC",text="الرقم الوظيفي")
+        self.label_id.place(x=850,y=360)
+        self.employee_id=Entry(
+            self.master,width=22,background="#EDFFF0",
+            font=('Bold Oblique',18)
+            ,relief=RAISED,border=1,justify=CENTER)
+        self.employee_id.place(x=520, y=360)
+    
+    def add_city(self):
+        '''add adress'''
+        self.label_city=Label(self.master,font=('Bold Oblique',18),
+                              bg="#AEDEFC",text="المدينة")
+        self.label_city.place(x=410,y=360)
+
+        self.entry_city=Entry(self.master,width=20,
+                              font=('Bold Oblique',18),
+                                 relief=RAISED,border=1,
+                                 background="#EDFFF0")
+        self.entry_city.place(x=120,y=360)
+    
+    def add_name(self):
+        '''add name'''
+        self.label_name=Label(self.master,
+                              text="إسم الموظف",font=('Bold Oblique',18),
+                              bg="#AEDEFC",)
+        self.label_name.place(x=853,y=433)
+        self.entry_name=Entry(self.master,width=22,
+                              font=('Bold Oblique',18),
+                                 relief=RAISED,border=1,
+                                 background="#EDFFF0")
+        self.entry_name.place(x=520,y=433)
+
+    def add_date(self):
+        '''add date'''
+        self.label_date=Label(self.master,
+                              font=('Bold Oblique',18), 
+                              bg="#AEDEFC",
+                              text="تاريخ التعيين")
+        self.label_date.place(x=390,y=433)
+
+        self.entry_date=DateEntry(self.master,
+                                  selectmode="day",
+                                  year=datetime.now().year,
+                                  month=datetime.now().month,
+                                  day=datetime.now().day,
+                                  font=('Bold Oblique',18),
+                                  justify=CENTER,
+                                  date_pattern="yyyy-mm-dd",
+                                  foreground="black",
+                                  headersforground="black",
+                                  selectbackground="black",
+                                  width=18,
+                                  )
+        self.entry_date.place(x=110,y=433)
