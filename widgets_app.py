@@ -6,15 +6,19 @@ from datetime import datetime
 import os,sys,shutil
 from tkcalendar import Calendar, DateEntry
 from threading import Thread
-
+from show_data import TreeviewApp
 class WidgetsApp:
     def __init__(self,master):
 
         self.master = master
-        self.master.geometry("1200x900+350+40")#ابعاد الشاشه
+        self.master.geometry("1200x800+350+40")#ابعاد الشاشه
         self.master.resizable(width=False ,height=False)
         self.master.title("نظام إدارة شئون الموظفين")
         self.master.iconbitmap("images\\title_app.ico")
+
+
+        self.class_treeview=TreeviewApp(self.master)
+        self.class_treeview.show_treeview()
 # ====================================================== #
 # تشغيل الدوال  الخاصة  إدخال البحث
         self.add_frame_title()
@@ -342,3 +346,4 @@ class WidgetsApp:
                                   image=self.show_image_show,
                                   font=('Bold Oblique',18),padx=20,compound="left")
         self.button_show.place(x=35,y=630)
+    
